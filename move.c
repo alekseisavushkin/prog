@@ -31,7 +31,8 @@ int main(int argc, char** argv)
 	int fd = open("file.txt", O_WRONLY | O_CREAT, 0777); //create and open file
 	if(fd < 0)
 		perror("mistake in opening file\n");
-		
+	
+	// AP: нужно воспользоваться своей библиотекой буферизованной записи и чтения - и везде пользоваться ей
 	if(write(fd, &numb, sizeof(int)) != sizeof(int)) //write a first number
 		perror("can't write number\n");
 	
