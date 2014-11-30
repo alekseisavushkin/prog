@@ -117,6 +117,7 @@ int main(int argc, char** argv)
 	}
 
 	int res = fork();
+	// AP: ни в коем случае не записывайте printf - пользуйтесь своей библиотекой
 	if(res)
 	{
 		close(1);
