@@ -5,15 +5,13 @@ public class Tester {
 		int count = 1;
 		double answer = 0;
 		double a = 0;
-		double b = 10;
+		double b = 11;
 		double step = 0.0000001;
-		int x = 0;
-		double IntegrationFunction = x*x;
 		Thread t[] = new Thread[count];
-		ThreadTest[] solv = new ThreadTest[count];
+		ThreadTest solv [] = new ThreadTest[count];
 		for (int i = 0; i < count; i++) {
-			solv[i] = new ThreadTest(a + i * (b - a) / count, a + (i + 1)* (b - a) / count, step, IntegrationFunction);
-			t[i] = new Thread(new ThreadTest(a + i * (b - a) / count, a + (i + 1) * (b - a) / count, step,IntegrationFunction));
+			solv[i] = new ThreadTest(a + i * (b - a) / count, a + (i + 1)* (b - a) / count, step);
+			t[i] = new Thread(new ThreadTest(a + i * (b - a) / count, a + (i + 1) * (b - a) / count, step));
 			t[i].start();
 		}
 		for (int i = 0; i < count; i++) {
@@ -28,5 +26,6 @@ public class Tester {
 		}
 
 	}
+
 
 }
